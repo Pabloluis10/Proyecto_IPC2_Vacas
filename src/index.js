@@ -57,6 +57,10 @@ app.get('/EliminarUsuario', (req, res) => {
     res.status(201).sendFile(path.join(__dirname, './views/EliminarUsuario.html'));
 });
 
+app.get('/Laboratorista', (req, res) => {
+    console.log ("Obtener la informacion del laboratorista en la base de datos del sistema");
+    res.status(201).sendFile(path.join(__dirname, './views/Laboratorista.html'));
+});
 app.listen(app.get('port'), () => {
     console.log('port', app.get('port'));
 });
