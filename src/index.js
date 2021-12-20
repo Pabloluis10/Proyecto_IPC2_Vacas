@@ -22,6 +22,16 @@ app.get('/RegitroPacientes', (req, res) => {
     res.status(201).sendFile(path.join(__dirname, './views/IngresoClientes.html'));
 });
 
+app.get('/Administrador', (req, res) => {
+    console.log ("verificar el usuario en la base de datos");
+    res.status(201).sendFile(path.join(__dirname, './views/Administrador.html'));
+});
+
+app.get('/RegitroPacientes', (req, res) => {
+    console.log ("verificar que el sistema tenga un apartado o base de datos donde guardar la información del cliente");
+    res.status(201).sendFile(path.join(__dirname, './views/IngresoClientes.html'));
+});
+
 app.listen(app.get('port'), () => {
     console.log('port', app.get('port'));
 });
