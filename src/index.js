@@ -4,7 +4,7 @@ const path = require('path');
 
 //app setting
 app.set('port', 3000);
-/*
+
 app.use(express.static('public'));
 
 app.use('/css', express.static(__dirname+'public/css'));
@@ -16,7 +16,7 @@ app.get('/', (req, res) => {
     console.log ("verificar que exista el o los usuario en la base de datos");
     res.status(201).sendFile(path.join(__dirname, './views/Pagina.html'));
 });
-
+/*
 app.get('/RegitroPacientes', (req, res) => {
     console.log ("verificar que el sistema tenga un apartado o base de datos donde guardar la información del cliente");
     res.status(201).sendFile(path.join(__dirname, './views/IngresoClientes.html'));
