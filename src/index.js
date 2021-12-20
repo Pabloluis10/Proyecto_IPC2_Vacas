@@ -52,6 +52,11 @@ app.get('/EliminarExamen', (req, res) => {
     res.status(201).sendFile(path.join(__dirname, './views/EliminarExamen.html'));
 });
 
+app.get('/EliminarUsuario', (req, res) => {
+    console.log ("Obtener los datos de los usuario de la base de datos para eliminar");
+    res.status(201).sendFile(path.join(__dirname, './views/EliminarUsuario.html'));
+});
+
 app.listen(app.get('port'), () => {
     console.log('port', app.get('port'));
 });
