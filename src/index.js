@@ -27,9 +27,9 @@ app.get('/Administrador', (req, res) => {
     res.status(201).sendFile(path.join(__dirname, './views/Administrador.html'));
 });
 
-app.get('/RegitroPacientes', (req, res) => {
-    console.log ("verificar que el sistema tenga un apartado o base de datos donde guardar la información del cliente");
-    res.status(201).sendFile(path.join(__dirname, './views/IngresoClientes.html'));
+app.get('/CrearExamen', (req, res) => {
+    console.log ("verificar la base de datos para agregar un examen");
+    res.status(201).sendFile(path.join(__dirname, './views/CrearExamen.html'));
 });
 
 app.listen(app.get('port'), () => {
