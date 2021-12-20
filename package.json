@@ -1,0 +1,19 @@
+{
+  "name": "proyecto-ipc2",
+  "version": "1.0.0",
+  "description": "proyecto de laboratorio ipc2",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Pabloluis",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.1",
+    "express": "^4.17.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}

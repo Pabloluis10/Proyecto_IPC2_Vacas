@@ -1,0 +1,62 @@
+#idname{
+    background: rgb(18, 233, 169);
+    color: rgb(54, 8, 71);
+    text-align: center;
+}
+
+header{
+    background: rgb(18, 233, 169);
+    color: white;
+}
+
+.fondo h2 {
+margin: 10;
+padding: 100px, 0, 0;
+text-align: center;
+}
+
+.fondo{
+    width: 500px;
+    height: 300px;
+    margin: auto;
+    top: 25%;
+    left: 50%;
+    padding-top: 5px;
+    color: white;
+}
+
+label{
+    margin: 5px;
+    padding: 5px;
+    text-align: center;
+    border-radius: 50px;
+    font-weight: bold;
+    display: block ;
+    background-color: black;
+    color: rgb(4, 247, 194);
+}
+
+input {
+    position: relative;
+    padding: 5px;
+    left: 25%;
+    width: 50%;
+    margin-bottom: 20px;
+}
+
+button {
+    position: relative;
+    left: -30px;
+    top: 40;
+    bottom: 0px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    color: white;
+    background: url(../imagenes/fondo.jpg) no-repeat center top;
+    background-size: cover;
+    font-family: sans-serif;
+    height: 100vh;
+}

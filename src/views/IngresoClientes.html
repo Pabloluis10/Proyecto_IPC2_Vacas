@@ -1,0 +1,39 @@
+<!DOCTYPE=html>
+<html lang="es">
+<head>
+	<title>Ingreso de Clientes</title>
+	<meta charset="UTF-8">
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<link rel="stylesheet" href="css/estiloIngresoClientes.css">
+</head>
+<body>
+	<header>
+		<h1 id="idname">Sistema de Registro</h1>		
+	</header>
+	<section>
+		<article class="fondo">
+			<h2>Ingreso de Datos</h2>
+			<form>
+				<!--ingreso de datos-->
+				<label for="Name">Nombre del Cliente</label>
+				<input type="text" id="name" placeholder="Nombre">
+
+				<label for="Apellido">Apellido del Cliente</label>
+				<input type="text" id="apellido" placeholder="Apellido">
+
+				<label for="Edad">Edad del Cliente</label>
+				<input type="text" id="edad" placeholder="Edad">
+
+				<button onclick="registrar()" type="button">Registrar</button>
+			</form>
+		</article>
+		<article>
+			<p>Lista de Clientes</p>
+			<ul>
+				<div id="listado"></div>
+			</ul>
+		</article>
+	</section>
+	<script type="text/javascript" src="javaScript/Registro.js"></script>
+</body>
+</html>
