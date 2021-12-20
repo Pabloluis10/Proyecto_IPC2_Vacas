@@ -16,12 +16,12 @@ app.get('/', (req, res) => {
     console.log ("verificar que exista el o los usuario en la base de datos");
     res.status(201).sendFile(path.join(__dirname, './views/Pagina.html'));
 });
-/*
+
 app.get('/RegitroPacientes', (req, res) => {
     console.log ("verificar que el sistema tenga un apartado o base de datos donde guardar la información del cliente");
     res.status(201).sendFile(path.join(__dirname, './views/IngresoClientes.html'));
 });
-*/
+
 app.listen(app.get('port'), () => {
     console.log('port', app.get('port'));
 });
