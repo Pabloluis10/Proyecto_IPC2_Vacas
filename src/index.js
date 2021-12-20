@@ -32,6 +32,26 @@ app.get('/CrearExamen', (req, res) => {
     res.status(201).sendFile(path.join(__dirname, './views/CrearExamen.html'));
 });
 
+app.get('/CrearUsuario', (req, res) => {
+    console.log ("verificar la base de datos para agregar un Usuario");
+    res.status(201).sendFile(path.join(__dirname, './views/CrearUsuario.html'));
+});
+
+app.get('/EditarExamen', (req, res) => {
+    console.log ("verificar la base de datos de los exmanes");
+    res.status(201).sendFile(path.join(__dirname, './views/EditarExamen.html'));
+});
+
+app.get('/Editar Usuario', (req, res) => {
+    console.log ("verificar la base de datos para editar un usuario");
+    res.status(201).sendFile(path.join(__dirname, './views/EditarUsuario.html'));
+});
+
+app.get('/EliminarExamen', (req, res) => {
+    console.log ("verificar la base de datos de los exmanes para eliminar");
+    res.status(201).sendFile(path.join(__dirname, './views/EliminarExamen.html'));
+});
+
 app.listen(app.get('port'), () => {
     console.log('port', app.get('port'));
 });
