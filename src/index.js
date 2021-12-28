@@ -20,7 +20,7 @@ app.use(express.static('public'));
 
 app.use('/css', express.static(__dirname+'public/css'));
 app.use('/imagenes', express.static(__dirname+'public/imagenes'));
-app.use('javaScript', express.static(__dirname+'public/javaScript'));
+app.use('/javaScript', express.static(__dirname+'public/javaScript'));
 
 
 app.get('/', (req, res) => {
@@ -33,7 +33,7 @@ app.get('/RegitroPacientes', (req, res) => {
     res.status(201).sendFile(path.join(__dirname, './views/IngresoClientes.html'));
 });
 
-app.get('/Administrador.html', (req, res) => {
+app.get('/Administrador', (req, res) => {
     console.log ("verificar el usuario en la base de datos");
     res.status(201).sendFile(path.join(__dirname, './views/Administrador.html'));
 });
