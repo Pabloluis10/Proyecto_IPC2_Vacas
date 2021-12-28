@@ -9,7 +9,7 @@ app.use(express.static('public'));
 
 app.use('/css', express.static(__dirname+'public/css'));
 app.use('/imagenes', express.static(__dirname+'public/imagenes'));
-app.use('javaScript', express.static(__dirname+'public/javaScript'));
+app.use('/javaScript', express.static(__dirname+'public/javaScript'));
 
 
 app.get('/', (req, res) => {
@@ -22,7 +22,7 @@ app.get('/RegitroPacientes', (req, res) => {
     res.status(201).sendFile(path.join(__dirname, './views/IngresoClientes.html'));
 });
 
-app.get('/Administrador.html', (req, res) => {
+app.get('/Administrador', (req, res) => {
     console.log ("verificar el usuario en la base de datos");
     res.status(201).sendFile(path.join(__dirname, './views/Administrador.html'));
 });
@@ -42,7 +42,7 @@ app.get('/EditarExamen', (req, res) => {
     res.status(201).sendFile(path.join(__dirname, './views/EditarExamen.html'));
 });
 
-app.get('/Editar Usuario', (req, res) => {
+app.get('/EditarUsuario', (req, res) => {
     console.log ("verificar la base de datos para editar un usuario");
     res.status(201).sendFile(path.join(__dirname, './views/EditarUsuario.html'));
 });
@@ -61,6 +61,7 @@ app.get('/Laboratorista', (req, res) => {
     console.log ("Obtener la informacion del laboratorista en la base de datos del sistema");
     res.status(201).sendFile(path.join(__dirname, './views/Laboratorista.html'));
 });
+
 app.listen(app.get('port'), () => {
     console.log('port', app.get('port'));
 });
