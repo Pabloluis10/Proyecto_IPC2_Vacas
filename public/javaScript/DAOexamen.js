@@ -1,3 +1,7 @@
+const express = require('express');
+const app = express();
+const port =  process.env.PORT || 3000;
+
 /**** mysql */
 //variables de entorno, esas vienen de docker
 const mysqlhost = process.env.MYSQLHOST || '3306';
@@ -13,11 +17,11 @@ const con = mysql.createConnection({
     password: mysqlpass,
     database: mysqldb
 });
-function datoExamen(){
+function DatoExamen(){
 con.connect(function(err){
     if(err) throw err;
     console.log("conexion exitosa");
-    var sql="INSERT INTO Examen(nombre, categoria, MontoCosto, MontoPagar) VALUE ('STIVEN','SABER',32,12)";
+    var sql="INSERT INTO Examen(nombre, categoria, MontoCosto, MontoPagar) VALUE ('STIVEN','SABER',45,15)";
     con.query(sql,function(err,resul){
         if(err) throw err;
         console.log("insertado")
