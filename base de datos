@@ -1,0 +1,94 @@
+CREATE SCHEMA IF NOT EXISTS `Practica` ;
+USE `Practica` ;
+
+-- -----------------------------------------------------
+-- Table `Practica`.`Secretaria`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `Practica`.`Secretaria` (
+  `CUI` VARCHAR(15) NOT NULL,
+  `nombre` VARCHAR(45) NULL,
+  `apellido` VARCHAR(45) NULL,
+  `telefono` VARCHAR(15) NULL,
+  PRIMARY KEY (`CUI`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `Practica`.`Laboratorista`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `Practica`.`Laboratorista` (
+  `CUI` VARCHAR(15) NOT NULL,
+  `nombre` VARCHAR(45) NULL,
+  `apellido` VARCHAR(45) NULL,
+  `no_Colegiado` VARCHAR(45) NULL,
+  `telefono` VARCHAR(15) NULL,
+  `password` VARCHAR(45) NULL,
+  PRIMARY KEY (`CUI`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `Practica`.`Administrador`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `Practica`.`Administrador` (
+  `CUI` VARCHAR(15) NOT NULL,
+  `nombre` VARCHAR(45) NULL,
+  `apellido` VARCHAR(45) NULL,
+  `telefono` VARCHAR(15) NULL,
+  `password` VARCHAR(45) NULL,
+  PRIMARY KEY (`CUI`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `Practica`.`Examen`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `Practica`.`Examen` (
+  `Codigo` INT NOT NULL AUTO_INCREMENT,
+  `nombre` VARCHAR(45) NULL,
+  `categoria` VARCHAR(45) NULL,
+  PRIMARY KEY (`Codigo`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `Practica`.`Paciente`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `Practica`.`Paciente` (
+  `Codigo` INT NOT NULL AUTO_INCREMENT,
+  `nombre` VARCHAR(45) NULL,
+  `apellido` VARCHAR(45) NULL,
+  `CUI` VARCHAR(15) NULL,
+  PRIMARY KEY (`Codigo`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `Practica`.`RealizarExamen`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `Practica`.`RealizarExamen` (
+  `Paciente_Codigo` INT NOT NULL,
+  `Examen_Codigo` INT NOT NULL,
+  `Laboratorista_CUI` VARCHAR(15) NOT NULL,
+  `Resultado` VARCHAR(45) NULL,
+  `hecho` TINYINT NULL,
+  PRIMARY KEY (`Paciente_Codigo`, `Examen_Codigo`),
+  INDEX `fk_Paciente_has_Examen_Examen1_idx` (`Examen_Codigo` ASC) VISIBLE,
+  INDEX `fk_Paciente_has_Examen_Paciente1_idx` (`Paciente_Codigo` ASC) VISIBLE,
+  INDEX `fk_Paciente_has_Examen_Laboratorista1_idx` (`Laboratorista_CUI` ASC) VISIBLE,
+  CONSTRAINT `fk_Paciente_has_Examen_Paciente1`
+    FOREIGN KEY (`Paciente_Codigo`)
+    REFERENCES `Practica`.`Paciente` (`Codigo`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Paciente_has_Examen_Examen1`
+    FOREIGN KEY (`Examen_Codigo`)
+    REFERENCES `Practica`.`Examen` (`Codigo`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Paciente_has_Examen_Laboratorista1`
+    FOREIGN KEY (`Laboratorista_CUI`)
+    REFERENCES `Practica`.`Laboratorista` (`CUI`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
