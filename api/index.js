@@ -4,20 +4,22 @@ const port = process.env.PORT || 3000;
 const path = require("path");
 const publico = path.join(__dirname, "../public");
 
+
+
 app.use(express.static(publico));
 
 /**** mysql */
 //variables de entorno, esas vienen de docker
-const mysqlhost = process.env.MYSQLHOST || 3306;
-const mysqluser = process.env.MYSQLUSER || "root";
-const mysqlpass = process.env.MYSQLPASS || "admin";
+const mysqlhost = process.env.MYSQLHOST || '192.168.1.25';
+const mysqluser = process.env.MYSQLUSER || "prueba";
+const mysqlpass = process.env.MYSQLPASS || "prueba";
 //paquete
 const mysql = require('mysql');
 //conexión
 const con = mysql.createConnection({
-    host: mysqlhost,
-    user: mysqluser,
-    password: mysqlpass
+    host: 3306,
+    user: "root",
+    password: "admin"
 });
 //prueba
 con.connect(function (err) {
@@ -38,9 +40,10 @@ app.get('/api/saludo', async (req, res) => {
         console.log("entrando2 . . . .");
 
         const con2 = mysql.createConnection({
-            host: mysqlhost,
-            user: mysqluser,
-            password:mysqlpass
+            host: 3306,
+            user: "root",
+            password:"admin",
+            database: "Practica"
         });
         //prueba
         con2.connect(function (err) {

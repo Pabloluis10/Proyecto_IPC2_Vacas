@@ -1,18 +1,7 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-//llamada a la base de datos
-let llamada = async () => {
-    console.log("hola mundo");
 
-    var data = { datos: 'datos' };
-
-    const response = await fetch('/api/saludo')
-        .then(response => response.json())
-        .catch(error => console.error('Error:', error))
-        .then(response => console.log('Success:', response));
-
-};
 //app setting
 app.set('port', 3000);
 
